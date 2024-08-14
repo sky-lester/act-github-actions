@@ -2,12 +2,15 @@ name: Test Workflow
 on:
   push:
     branches:
-      - staging
+      - [main]
 
 jobs:
   deploy:
-    runs-on: [self-hosted, staging-server]
+    # runs-on: [self-hosted, staging-server]
+    runs-on: ubuntu-latest
     steps:
       - name: Update Staging
         run: |
+          set x
+          git status
           echo "Hello Test"
