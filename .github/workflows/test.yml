@@ -12,5 +12,6 @@ jobs:
       - name: Update Staging
         run: |
           set x
-          git --version
+          cd /Users/lesterreandino/Desktop/testproj/act-github-actions/act-github-actions
+          git status
           echo "Hello Test"
