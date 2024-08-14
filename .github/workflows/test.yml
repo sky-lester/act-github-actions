@@ -12,5 +12,5 @@ jobs:
       - name: Update Staging
         run: |
           set x
-          git status
+          git --version
           echo "Hello Test"
