@@ -1,0 +1,20 @@
+name: Staging Workflow
+on:
+  push:
+    branches:
+      - [staging]
+
+jobs:
+  deploy-staging:
+    runs-on: [self-hosted, staging-server]
+    steps:
+      - name: Update Staging
+        run: |
+          set x
+          cd /Users/lesterreandino/Desktop/testproj/act-github-actions/act-github-actions
+          git checkout main
+          git pull origin main
+          git checkout staging
+          git reset --hard main
+          git pull origin staging
+          echo "Staging Updated!"
