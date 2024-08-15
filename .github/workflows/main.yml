@@ -20,6 +20,8 @@ jobs:
       - name: Update Staging
         run: |
           cd /workspace
+          git checkout main
+          git pull origin main
           git checkout staging
           git reset --hard main
           git push origin staging --force
