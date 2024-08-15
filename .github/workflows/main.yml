@@ -1,0 +1,26 @@
+name: Main Workflow
+on:
+  push:
+    branches:
+      - [main]
+
+jobs:
+  deploy-main:
+    runs-on: [self-hosted, main-server]
+    steps:
+      - name: Update Main
+        run: |
+          set x
+          cd /Users/lesterreandino/Desktop/testproj/act-github-actions/act-github-actions
+          git checkout main
+          git pull origin main
+      - name: Update Staging
+        run: |
+          set x
+          cd /Users/lesterreandino/Desktop/testproj/act-github-actions/act-github-actions
+          git checkout staging
+          git reset --hard main
+          git push origin staging --force
+          echo "Staging Updated!"
+          git checkout main
+          echo "NOW IN MAIN!"
