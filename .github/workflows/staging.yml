@@ -10,11 +10,10 @@ jobs:
     steps:
       - name: Update Staging
         run: |
-          set x
           cd /workspace
           git checkout main
           git pull origin main
           git checkout staging
           git reset --hard main
           git pull origin staging
-          echo "Staging Updated!"
+          echo "Staging Server Updated from remote!"

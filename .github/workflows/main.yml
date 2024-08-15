@@ -10,17 +10,19 @@ jobs:
     steps:
       - name: Update Main
         run: |
-          set x
           cd /workspace
           git checkout main
           git pull origin main
+          echo "Main server updated from remote!"
+  update-staging:
+    runs-on: [self-hosted, staging-server]
+    steps:
       - name: Update Staging
         run: |
-          set x
           cd /workspace
           git checkout staging
           git reset --hard main
           git push origin staging --force
-          echo "Staging Updated!"
+          echo "Staging remote updated!"
           git checkout main
-          echo "NOW IN MAIN!"
+          echo "Now in main!"
