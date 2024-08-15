@@ -17,7 +17,7 @@ jobs:
       - name: Update Staging
         run: |
           set x
-          cd /Users/lesterreandino/Desktop/testproj/act-github-actions/act-github-actions
+          cd /workspace
           git checkout staging
           git reset --hard main
           git push origin staging --force
