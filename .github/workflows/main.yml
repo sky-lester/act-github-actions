@@ -11,7 +11,7 @@ jobs:
       - name: Update Main
         run: |
           set x
-          cd /Users/lesterreandino/Desktop/testproj/act-github-actions/act-github-actions
+          cd /workspace
           git checkout main
           git pull origin main
       - name: Update Staging
